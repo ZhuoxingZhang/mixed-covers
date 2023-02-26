@@ -1,7 +1,7 @@
 # Introduction
 This repository contains various artifacts, such as source code, experimental results, and other materials, that supplement our work on mixed covers.\
 &nbsp;&nbsp;&nbsp;&nbsp;For all experiment code on our paper, you can visit <kbd>exp/</kbd> to look for, like experiment 1, experiment 2, ...\
-&nbsp;&nbsp;&nbsp;&nbsp;In the following sections, we describe how our experiments can be reproduced. 
+In the following sections, we describe how our experiments can be reproduced. 
 # Preliminaries: Getting databases ready for experiments
 > 1. Import 14 datasets as SQL databases
 >> We have used MySQL 8.0 as database workbench. Firstly, please create a database called "freeman". Afterwards, import the [14 datasets](https://hpi.de/naumann/projects/repeatability/data-profiling/fds.html) as MySQL databases by setting column names as 0,1,...,n-1 where n is the number of columns in a given dataset. In addition, please create a column named "id" as an auto_increment attribute for each table.
@@ -10,7 +10,7 @@ This repository contains various artifacts, such as source code, experimental re
 >3. JDK & JDBC
 >> Our code was developed in JAVA. As a consequence, please specify a JDK with version 8 or later. At the moment, we are using JDBC (version 8.0.26) as a connector to MySQL databases.
 # Experiments
-In line with our paper, our experiments are organized into five sections. For each of them, you can run different code/scripts:
+Our experiments are organized into seven sections. For each of them, you can run different code/scripts:
 >1. Number of Keys on Real-World Schemata
 >> In this experiment, we connected to [the relational data
 repository](https://relational.fit.cvut.cz) to check how many uniqueness constraints (primary key plus additional UNIQUE constraints) are i) specified or ii) valid on some public databases. Results are available for a variety of databases, including the numbers on each of the tables in each of the databases <kbd>Artifact/02 - Experiments/1 - Number of Keys on Real-World Schemata/</kbd>. The paper contains only a summary of them.
