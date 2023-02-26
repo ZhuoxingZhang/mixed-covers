@@ -11,20 +11,13 @@ In the following sections, we describe how our experiments can be reproduced.
 >> Our code was developed in JAVA. As a consequence, please specify a JDK with version 8 or later. At the moment, we are using JDBC (version 8.0.26) as a connector to MySQL databases.
 # Experiments
 Our experiments are organized into seven sections. For each of them, you can run different code/scripts:
->0. Computing FD covers
+> 0. Computing FD covers
 >> In this experiment, we compute and save several FD coverx with given FD as input. These FD covers include non-redundant, reduced, canonical, minimal and reduced minimal covers. Then, we statistics some properties when computing these FD covers. Your can run source code in <kbd>exp/exp0</kbd> on mainstream IDEs like eclipse or IDEA.
->1. Impact of FD covers on computing minimal keys
->> In this experiment, we investigate the influence (time required) of different FD covers as input on computing minimal keys. The algorithm to compute minimal keys is a P-time algorithm, proposed by Osborne. Your can run source code in <kbd>exp/exp1</kbd>.
+> 1. Impact of FD covers on computing minimal keys
+>> In this experiment, we investigate the influence (time required) of different FD covers as input on computing minimal keys. The algorithm to compute minimal keys is a P-time algorithm, proposed by Osborne. You can run source code in <kbd>exp/exp1</kbd>.
 > 2. Computing mixed covers
->> Given an FD set, such as original, non-redundant,... This experiment computes and saves Key/FD cover, with given FD set as input, such as original, non-redundant, reduced, ... Then, the experiment statistics some properties when computing mixed covers. 
-> 4. Performance of Algorithms
->> 4.1 Real-world
->>> Before running these experiments, set some parameters in <kbd>conf/Constant.java</kbd> to access some datasets, and to turn enable/disable some options. Afterwards, you can run <kbd>conf/Main.java</kbd> to start the experiment. Our results are shown in <kbd>Artifact/02 - Experiments/4 - Performance of Algorithms/Real-world/</kbd>.
-
->> 4.2 Lineitem
->>> The performance comparison of Alg. 1 over Alg. 2 is done in <kbd>additional/SubschemaPerfExp.java</kbd>. Before starting this experiment, create a new file based on the sub-schemata of the decomposition result from Experiment 4.1 for the lineitem dataset that are in BCNF. Then configure the main function and start. Our results are shown in <kbd>Artifact/02 - Experiments/4 - Performance of Algorithms/Lineitem/</kbd>.
-
->> 4.3 RunningExample
->>> For experiments with our running example, as introduced in our paper, we have placed our experimental results, schema definitions, stored procedures, and SQL scripts for update and query operations in <kbd>Artifact/02 - Experiments/4 - Performance of Algorithms/RunningExample/</kbd>. These can be repeated by creating a database for each of the two decompositions (3NF vs 2-CONF), populating them with different numbers of records, and then running the operations. 
-> 5. PTIME BCNF
->> In this experiment, we analyzed the cost of conducting BCNF decompositions that are guaranteed to be in polynomial deterministic time in the input. We implemented Tsou and Fischer's classical PTIME lossless BCNF-decomposition algorithm in <kbd>additional/LosslessJoinDecompIntoBCNF.java</kbd>. Before the execution, set up the corresponding dataset information in <kbd>conf/Constant.java</kbd>, and some other variables in the main function of <kbd>additional/LosslessJoinDecompIntoBCNF.java</kbd>. After this you can start the experiment. Finally, you can check the folder <kbd>Artifact/02 - Experiments/5 - PTIME BCNF/</kbd> for our experimental statistics and logs.
+>> Given an FD set, such as original, non-redundant,... This experiment computes and saves Key/FD cover, with given FD set as input, such as original, non-redundant, reduced, ... Then, the experiment statistics some properties when computing mixed covers. In <kbd>exp/exp2</kbd>, it is the source code for experiment 2.
+> 3. Further mixed cover refining
+>> Following up experiment 2, in experiment 3, we compute corresponding FD cover of \Sigma_FD of mixed cover of corresponding cover type. For example, after we get a mixed cover of a minimal FD cover, we get minimal keys \Sigma_k and remaining FDs \Sigma_FD, and then we only compute the minimal cover of \Sigma_FD further. Finally we keep some stats like size, attribute symbol number and cost. The code in <kbd>exp/exp3</kbd> shows how to reproduce.
+> 4. Performance tests on updates on non-normalized schemas
+>> In this experiment, we investigate the performance of different FD covers of non-normalized schemas on update tests. To reproduce the experiments, you just run the code in <kbd>exp/exp4</kbd>.
