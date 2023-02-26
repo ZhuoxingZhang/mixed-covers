@@ -15,7 +15,7 @@ Our experiments are organized into seven sections. For each of them, you can run
 >> In this experiment, we compute and save several FD coverx with given FD as input. These FD covers include non-redundant, reduced, canonical, minimal and reduced minimal covers. Then, we statistics some properties when computing these FD covers. Your can run source code in <kbd>exp/exp0</kbd> on mainstream IDEs like eclipse or IDEA.
 >1. Impact of FD covers on computing minimal keys
 >> In this experiment, we investigate the influence (time required) of different FD covers as input on computing minimal keys. The algorithm to compute minimal keys is a P-time algorithm, proposed by Osborne. Your can run source code in <kbd>exp/exp1</kbd>.
-> 2. Performance of n-CONF
+> 2. Computing mixed covers
 >> Given an FD set, such as original, non-redundant,... This experiment computes and saves Key/FD cover, with given FD set as input, such as original, non-redundant, reduced, ... Then, the experiment statistics some properties when computing mixed covers. 
 > 4. Performance of Algorithms
 >> 4.1 Real-world
