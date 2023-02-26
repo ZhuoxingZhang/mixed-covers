@@ -1,15 +1,13 @@
 # Introduction
-This repository contains various artifacts, such as source code, experimental results, and other materials, that supplement our work on the Composite Object Normal Form (CONF).\
-&nbsp;&nbsp;&nbsp;&nbsp;Foremost, the repository contains an implementation of the lossless FD-preserving decomposition algorithm (Alg.1 at <kbd>conf/CONF.java</kbd>) we have proposed. Subsequently, we have implemented an additional three algorithms that allow us to compare Alg. 1 with previous state-of-the-art algorithms: Alg. 2(<kbd>conf/CONF_Comp.java</kbd>), Alg. 3(<kbd>conf/CONF_3NF.java</kbd>) and Alg. 4(<kbd>conf/CONF_Basic.java</kbd>). We have also included the code of implementations for other experiments: <kbd>conf/</kbd> and <kbd>additional/</kbd>. For all experimental results, logs and some sql scripts are included, too (<kbd>Artifact/02 - Experiments/</kbd>). Finally, we have also included the proofs of Theorems we could not fit into the paper due to page restrictions <kbd>Artifact/01 - Proofs/</kbd>.\
+This repository contains various artifacts, such as source code, experimental results, and other materials, that supplement our work on mixed covers.\
+&nbsp;&nbsp;&nbsp;&nbsp;For all experiment code on our paper, you can visit <kbd>exp/</kbd> to look for, like experiment 1, experiment 2, ...\
 &nbsp;&nbsp;&nbsp;&nbsp;In the following sections, we describe how our experiments can be reproduced. 
 # Preliminaries: Getting databases ready for experiments
 > 1. Import 14 datasets as SQL databases
 >> We have used MySQL 8.0 as database workbench. Firstly, please create a database called "freeman". Afterwards, import the [14 datasets](https://hpi.de/naumann/projects/repeatability/data-profiling/fds.html) as MySQL databases by setting column names as 0,1,...,n-1 where n is the number of columns in a given dataset. In addition, please create a column named "id" as an auto_increment attribute for each table.
-> 2. Import TPC-H benchmark
->> Please visit the [website](https://relational.fit.cvut.cz/dataset/TPCH) and export the TPC-H database as an .sql file. Then, please import the file in your own local MySQL workbench. Under <kbd>Artifact/02 - Experiments/3 - Performance of n-CONF/TPC-H/</kbd> we have included all 22 official SQL queries and refresh functions to be used in our experiments.
->3. Functional dependencies (FDs)
->> For each of the 14 datasets, the atomic closure for the set of FDs that hold on a dataset are given as separate json files in <kbd>Artifact/03 - FD/</kbd>. For the TPC-H benchmark, we have implemented the FDs inside our code.
->4. JDK & JDBC
+>2. Functional dependencies (FDs)
+>> For each of the 14 datasets, we compute all FD covers and mixed covers. You can find all FD covers/mixed covers given as separate json files in <kbd>Artifact/FD/</kbd>.
+>3. JDK & JDBC
 >> Our code was developed in JAVA. As a consequence, please specify a JDK with version 8 or later. At the moment, we are using JDBC (version 8.0.26) as a connector to MySQL databases.
 # Experiments
 In line with our paper, our experiments are organized into five sections. For each of them, you can run different code/scripts:
