@@ -16,7 +16,7 @@ Our experiments are organized into seven sections. For each of them, you can run
 > 1. Impact of FD covers on computing minimal keys
 >> In this experiment, we investigate the influence (time required) of different FD covers as input on computing minimal keys. The algorithm to compute minimal keys is a P-time algorithm, proposed by Osborne. You can run source code in <kbd>exp/exp1</kbd>.
 > 2. Computing mixed covers
->> Given an FD set, such as original, non-redundant,... This experiment computes mixed covers, with given FD set as input, such as original, non-redundant, reduced, ... Then, the experiment statistics some properties when computing mixed covers. In <kbd>exp/exp2</kbd>, it is the source code for experiment 2.
+>> This experiment computes mixed covers, with given FD set as input, such as original, non-redundant, reduced, ... Then, the experiment statistics some properties when computing mixed covers. In <kbd>exp/exp2</kbd>, it is the source code for experiment 2.
 > 3. Further mixed cover refining
 >> Following up experiment 2, in experiment 3, we compute corresponding FD cover of \Sigma_FD of mixed cover of corresponding cover type. For example, after we get a mixed cover of a minimal FD cover, we get minimal keys \Sigma_k and remaining FDs \Sigma_FD, and then we only compute the minimal cover of \Sigma_FD further. Finally we keep some stats like size, attribute symbol number and cost. The code in <kbd>exp/exp3</kbd> shows how to reproduce.
 > 4. Performance tests under updates on non-normalized schemas
