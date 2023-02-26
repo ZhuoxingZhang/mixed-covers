@@ -11,17 +11,12 @@ In the following sections, we describe how our experiments can be reproduced.
 >> Our code was developed in JAVA. As a consequence, please specify a JDK with version 8 or later. At the moment, we are using JDBC (version 8.0.26) as a connector to MySQL databases.
 # Experiments
 Our experiments are organized into seven sections. For each of them, you can run different code/scripts:
->1. Number of Keys on Real-World Schemata
->> In this experiment, we connected to [the relational data
-repository](https://relational.fit.cvut.cz) to check how many uniqueness constraints (primary key plus additional UNIQUE constraints) are i) specified or ii) valid on some public databases. Results are available for a variety of databases, including the numbers on each of the tables in each of the databases <kbd>Artifact/02 - Experiments/1 - Number of Keys on Real-World Schemata/</kbd>. The paper contains only a summary of them.
->2. Why to minimize 3NF schemata?
->> For this experiment, you need to select the lineitem dataset as the dataset source in <kbd>conf/Constant.java</kbd>. Note that lineitem is the biggest table in the TPC-H benchmark. Subsequently, please set some options in the main function of <kbd>conf/RealWorldSelectAndUpdate.java</kbd>, and finally run the class to start this experiments. We have included our experimental results in <kbd>Artifact/02 - Experiments/2 - Why to minimize 3NF schemata/</kbd>
-> 3. Performance of n-CONF
->> 3.1 Armstrong relations
->>> The code for generating Armstrong relations for a given set of minimal keys on a given set of attributes is given here: <kbd>conf/KeyNumExp.java</kbd>. Parameters can be set by initializing some variables in the main function. Subsequently, you can run the class to execute experiments. For our experimental results and graphs, please see <kbd>Artifact/02 - Experiments/3 - Performance of n-CONF/Armstrong relations/</kbd>.
-
->> 3.2 TPC-H benchmark
->>> For the TPC-H benchmark experiments, we preselected some minimal keys in the function <kbd>get_table_uniques_from_TPCH()</kbd> of <kbd>additional/KeyNumExpOnTPCBenchmark.java</kbd>. These keys were included in the set of minimal keys mined from the dataset. To run the code, you simply need to set some parameters in the main funtion and then start. Our experimental results and statistics are included in <kbd>Artifact/02 - Experiments/3 - Performance of n-CONF/TPC-H/</kbd>.
+>0. Computing FD covers
+>> In this experiment, we compute and save several FD coverx with given FD as input. These FD covers include non-redundant, reduced, canonical, minimal and reduced minimal covers. Then, we statistics some properties when computing these FD covers. Your can run source code in <kbd>exp/exp0</kbd> on mainstream IDEs like eclipse or IDEA.
+>1. Impact of FD covers on computing minimal keys
+>> In this experiment, we investigate the influence (time required) of different FD covers as input on computing minimal keys. The algorithm to compute minimal keys is a P-time algorithm, proposed by Osborne. Your can run source code in <kbd>exp/exp1</kbd>.
+> 2. Performance of n-CONF
+>> Given an FD set, such as original, non-redundant,... This experiment computes and saves Key/FD cover, with given FD set as input, such as original, non-redundant, reduced, ... Then, the experiment statistics some properties when computing mixed covers. 
 > 4. Performance of Algorithms
 >> 4.1 Real-world
 >>> Before running these experiments, set some parameters in <kbd>conf/Constant.java</kbd> to access some datasets, and to turn enable/disable some options. Afterwards, you can run <kbd>conf/Main.java</kbd> to start the experiment. Our results are shown in <kbd>Artifact/02 - Experiments/4 - Performance of Algorithms/Real-world/</kbd>.
