@@ -3,10 +3,10 @@ This repository contains various artifacts, such as source code, experimental re
 &nbsp;&nbsp;&nbsp;&nbsp;For all experiment code in our paper, you can visit <kbd>exp/</kbd> to look for, like experiment 0, experiment 1, ...\
 In the following sections, we describe how our experiments can be reproduced. 
 # Preliminaries: Getting databases ready for experiments
-> 1. Import 14 datasets as SQL databases
->> We have used MySQL 8.0 as database workbench. Firstly, please create a database called "freeman". Afterwards, import the [14 datasets](https://hpi.de/naumann/projects/repeatability/data-profiling/fds.html) as MySQL databases by setting column names as 0,1,...,n-1 where n is the number of columns in a given dataset. In addition, please create a column named "id" as an auto_increment attribute for each table.
+> 1. Import datasets as SQL databases
+>> We have used MySQL 8.0 as database workbench. Firstly, please create a database called "freeman". Afterwards, import the [datasets](https://drive.google.com/drive/folders/1RIO8hRNNwvTn0DU5tuazYWpsaIEtr7ch?usp=sharing) as MySQL databases by setting column names as 0,1,...,n-1 where n is the number of columns in a given dataset. In addition, please create a column named "id" as an auto_increment attribute for each table.
 >2. Functional dependencies (FDs)
->> For each of the 14 datasets, we compute all FD covers and mixed covers. You can find all FD covers/mixed covers given as separate json files in <kbd>Artifact/FD/</kbd>.
+>> For each of the datasets, we compute all FD covers and mixed covers. You can find all FD covers/mixed covers given as separate json files in <kbd>Artifact/FD/</kbd>.
 >3. JDK & JDBC
 >> Our code was developed in JAVA. As a consequence, please specify a JDK with version 8 or later. At the moment, we are using JDBC (version 8.0.26) as a connector to MySQL databases.
 # Experiments
